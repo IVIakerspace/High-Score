@@ -29,18 +29,26 @@ namespace High_Score
 
         private void OnClickEsc(object sender, RoutedEventArgs e)
         {
-            string message = "Are you sure?";
-            string caption = "Confirmation";
+            string message = "Are you sure you want to exit?";
+            string caption = "Exit";
             MessageBoxButton buttons = MessageBoxButton.YesNo;
             MessageBoxImage icon = MessageBoxImage.Question;
-            if (MessageBox.Show(message, caption, buttons, icon) == MessageBoxResult.OK)
+            if (MessageBox.Show(message, caption, buttons, icon) == MessageBoxResult.Yes)
             {
                 // OK code here  
+                System.Windows.Application.Current.Shutdown();
             }
             else
             {
                 // Cancel code here  
             }
+        }
+
+        private void btnNewGame_Click(object sender, RoutedEventArgs e)
+        {
+            PlayersNameDialog playersNameDialog = new PlayersNameDialog();
+            playersNameDialog.ShowDialog();
+
         }
     }
 }
