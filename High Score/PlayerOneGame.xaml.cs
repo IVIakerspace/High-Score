@@ -15,23 +15,13 @@ using System.Windows.Shapes;
 namespace High_Score
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for PlayerOneGame.xaml
     /// </summary>
-    public partial class PlayersNameDialog : Window
+    public partial class PlayerOneGame : Window
     {
-        public PlayersNameDialog()
+        public PlayerOneGame()
         {
             InitializeComponent();
-        }
-
-        List<Players> _players = new List<Players>();
-
-        private void btnDialogOk_Click(object sender, RoutedEventArgs e)
-        {
-            Players players = new Players();    
-            players.PlayerName=txtAnswer.Text;
-            this.Close();
-
         }
     }
 }
