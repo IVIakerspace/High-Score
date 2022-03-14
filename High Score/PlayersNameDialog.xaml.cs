@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,8 +32,10 @@ namespace High_Score
         {
             Players players = new Players();    
             players.PlayerName=txtAnswer.Text;
+            string json = JsonSerializer.Serialize(players);
+            File.WriteAllText(@"players.json", json);
             this.Close();
-
+            
         }
     }
 }

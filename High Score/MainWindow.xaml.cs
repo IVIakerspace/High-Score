@@ -50,6 +50,11 @@ namespace High_Score
             playersNameDialog.ShowDialog();
 
         }
+
+        private void LoadHighScooreList()
+        {
+
+        }
     }
 }
 
