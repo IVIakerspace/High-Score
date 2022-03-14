@@ -26,14 +26,15 @@ namespace High_Score
             InitializeComponent();
         }
 
-        List<Players> _players = new List<Players>();
+       
 
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
             Players players = new Players();    
             players.PlayerName=txtAnswer.Text;
-            string json = JsonSerializer.Serialize(players);
-            File.WriteAllText(@"players.json", json);
+
+            //string json = JsonSerializer.Serialize(players);
+            //File.WriteAllText(@"players.json", json);
             this.Close();
             
         }

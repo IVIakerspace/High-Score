@@ -12,4 +12,5 @@ namespace High_Score
         public int Score { get; set; }
         public int PlayerNumber { get; set; }
     }
+
 }

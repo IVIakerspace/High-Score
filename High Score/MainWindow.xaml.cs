@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,7 +25,7 @@ namespace High_Score
         public MainWindow()
         {
             InitializeComponent();
-
+            LoadHighScooreList();
 
         }
 
@@ -51,9 +53,21 @@ namespace High_Score
 
         }
 
+        
+
         private void LoadHighScooreList()
         {
+            
+            Players item = JsonFileReader.Read<Players>(@"Players.json");
+        }
 
+        public static class JsonFileReader
+        {
+            public static T Read<T>(string filePath)
+            {
+                string text = File.ReadAllText(filePath);
+                return JsonSerializer.Deserialize<T>(text);
+            }
         }
     }
 }
