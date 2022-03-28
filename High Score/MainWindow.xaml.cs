@@ -19,6 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Text.Json.Serialization;
+using System.Media;
 
 namespace High_Score
 {
@@ -32,40 +33,38 @@ namespace High_Score
         public MainWindow()
         {
             InitializeComponent();
-            LoadHighScoreList();
-            
+            LoadHighScoreList();           
+
             port.DataReceived += Port_DataReceived;
             try
             {
                 port.Open();
+                
+
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-
+                
             }
+                   
 
         }
         int _p1Score;
         int _p2Score;
 
+        
+
         private void Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-
             string data = port.ReadLine();
             if (data.Contains("one player game"))
             {
-
                 onePlayerScreen();
-                
-
             }
             if (data.Contains("two players game"))
             {
-                //MessageBox.Show("two player game!!!");
-
-                twoPlayersScreen();
-                
+                twoPlayersScreen();                
             }
 
             if (data.Contains("time is: "))
@@ -219,8 +218,7 @@ namespace High_Score
                 l.Visibility = v;
             }), DispatcherPriority.Background);
         }
-
-       
+               
 
         void UpdateLabelText(Label l, string s)
         {
@@ -229,8 +227,7 @@ namespace High_Score
                 l.Content = s;
             }), DispatcherPriority.Background);
         }
-
-        
+                
 
         private void OnClickEsc(object sender, RoutedEventArgs e)
         {
@@ -250,14 +247,6 @@ namespace High_Score
         }
 
          public static List<Player> playersList = new List<Player>();
-
-    
-        private void btnNewGame_Click(object sender, RoutedEventArgs e)
-        {
-            //PlayersNameDialog playersNameDialog = new PlayersNameDialog();
-            //playersNameDialog.ShowDialog();
-        }
-
         
 
         private void LoadHighScoreList()
@@ -290,12 +279,6 @@ namespace High_Score
 
             highScoreScreen();
 
-            //string highScorePlaylist = playersList[0].PlayerName + "  -  " + playersList[0].Score + Environment.NewLine +
-            //                            playersList[1].PlayerName + "  -  " + playersList[1].Score + Environment.NewLine +
-            //                            playersList[2].PlayerName + "  -  " + playersList[2].Score;
-
-
-            //UpdateLabelText(highScoreTable, highScorePlaylist);
         }
 
         string GetName(string playernum)

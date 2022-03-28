@@ -10,11 +10,12 @@
 
   <ItemGroup>
     <None Remove="Images\backgound.png" />
+    <None Remove="Sounds\DUN.mp3" />
+    <None Remove="Video\HighScoreVideoOpening.mp4" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Fonts\" />
-    <Folder Include="Sounds\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +25,12 @@
 
   <ItemGroup>
     <Resource Include="Images\backgound.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Sounds\DUN.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Video\HighScoreVideoOpening.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
