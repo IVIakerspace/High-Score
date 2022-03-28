@@ -21,22 +21,26 @@ namespace High_Score
     /// </summary>
     public partial class PlayersNameDialog : Window
     {
-        public PlayersNameDialog()
+        public PlayersNameDialog(string s)
         {
+            
             InitializeComponent();
+            lblQuestion.Content = s;
+
         }
-
-       
-
+        
+        public string PlayerNum { get; set; }
+        public string Name { get; set; }
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
-            Players players = new Players();    
-            players.PlayerName=txtAnswer.Text;
-
-            //string json = JsonSerializer.Serialize(players);
-            //File.WriteAllText(@"players.json", json);
-            this.Close();
             
+
+            Name = txtAnswer.Text;
+
+            this.Close();
+
         }
     }
+
+
 }

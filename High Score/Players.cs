@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace High_Score
 {
-    internal class Players
+    public class Player
     {
         public string PlayerName { get; set; }
         public int Score { get; set; }
-        public int PlayerNumber { get; set; }
+        //public int PlayerNumber { get; set; }
     }
-
+        
 }

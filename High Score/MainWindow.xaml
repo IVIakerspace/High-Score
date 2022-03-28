@@ -15,9 +15,18 @@
             <ImageBrush ImageSource="/images/backgound.png"/>
         </Grid.Background>
         <Label x:Name="Title" Content="High Score" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontFamily="Diary of an 8-bit mage" FontSize="110" Background="#00000000" Foreground="#FFF78888"/>
+
+        <Label x:Name="TimeLabel" Visibility="Hidden" Content="Time - 30" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontFamily="Diary of an 8-bit mage" FontSize="110" Background="#00000000" Foreground="#FFF78888"/>
+        <Label x:Name="P1ScoreLabel" Visibility="Hidden" Content="Player 1 Score - 0" HorizontalAlignment="Center" Margin="0,550,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontFamily="Diary of an 8-bit mage" FontSize="110" Background="#00000000" Foreground="#FFF78888"/>
+        <Label x:Name="P2ScoreLabel" Visibility="Hidden" Content="Player 2 Score - 0" HorizontalAlignment="Center" Margin="0,700,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontFamily="Diary of an 8-bit mage" FontSize="110" Background="#00000000" Foreground="#FFF78888"/>
+        <Label x:Name="highScoreTable" Visibility="Visible" Content="Player - 0"  HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontFamily="Diary of an 8-bit mage" FontSize="90" Background="#00000000" Foreground="#FFF78888"/>
+        
+
+
         <Button x:Name="btnCancel" IsCancel="true" Click="OnClickEsc" Width="10" Height="8" Grid.RowSpan="1" Grid.ColumnSpan="1" HorizontalAlignment="Right" VerticalAlignment="Top" ></Button>
-        
-        
+
+
+
         <Button x:Name="btnNewGame" Click="btnNewGame_Click" Content="New Game" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Height="48" Width="100" RenderTransformOrigin="0.776,0.619"/>
 
     </Grid>
